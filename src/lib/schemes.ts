@@ -74,7 +74,7 @@ const MID = ["Below ₹1 lakh", "₹1–3 lakh", "₹3–5 lakh"];
 export const SCHEMES: Scheme[] = [
   {
     scheme_id: "pm-kisan",
-    name: { en: "PM-KISAN", hi: "", mr: "" },
+    name: { en: "PM-KISAN", hi: "पीएम-किसान", mr: "पीएम-किसान" },
     description:
       "Income support of ₹6,000 a year, paid in three instalments, for eligible landholding farmer families.",
     benefits: "₹6,000 per year transferred directly to the bank account, in three instalments of ₹2,000.",
@@ -95,7 +95,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "pmay-gramin",
-    name: { en: "Pradhan Mantri Awaas Yojana – Gramin", hi: "", mr: "" },
+    name: { en: "Pradhan Mantri Awaas Yojana – Gramin", hi: "प्रधानमंत्री आवास योजना – ग्रामीण", mr: "प्रधानमंत्री आवास योजना – ग्रामीण" },
     description:
       "Assistance for building a pucca house for rural households living in kaccha or unsafe housing.",
     benefits: "Grant assistance for house construction, with support for a toilet and wage days under NREGA.",
@@ -111,7 +111,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "pmay-urban",
-    name: { en: "Pradhan Mantri Awaas Yojana – Urban", hi: "", mr: "" },
+    name: { en: "Pradhan Mantri Awaas Yojana – Urban", hi: "प्रधानमंत्री आवास योजना – शहरी", mr: "प्रधानमंत्री आवास योजना – शहरी" },
     description: "Housing support for urban households, including interest subsidy on home loans.",
     benefits: "Credit-linked interest subsidy or construction assistance for an eligible urban home.",
     documents: ["Aadhaar card", "Income proof", "Bank passbook", "Proof of urban residence"],
@@ -130,7 +130,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "ujjwala",
-    name: { en: "Pradhan Mantri Ujjwala Yojana", hi: "", mr: "" },
+    name: { en: "Pradhan Mantri Ujjwala Yojana", hi: "प्रधानमंत्री उज्ज्वला योजना", mr: "प्रधानमंत्री उज्ज्वला योजना" },
     description: "Free LPG connection for women from low-income households.",
     benefits: "Deposit-free LPG connection with support towards the first refill and stove.",
     documents: ["Aadhaar card", "Ration card", "Bank passbook", "Address proof"],
@@ -145,7 +145,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "jan-dhan",
-    name: { en: "Pradhan Mantri Jan-Dhan Yojana", hi: "", mr: "" },
+    name: { en: "Pradhan Mantri Jan-Dhan Yojana", hi: "प्रधानमंत्री जन-धन योजना", mr: "प्रधानमंत्री जन-धन योजना" },
     description: "Zero-balance bank account with accident cover and overdraft facility.",
     benefits: "No minimum balance account, RuPay debit card with accident insurance cover.",
     documents: ["Aadhaar card", "Any one address proof"],
@@ -160,7 +160,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "sukanya-samriddhi",
-    name: { en: "Sukanya Samriddhi Yojana", hi: "", mr: "" },
+    name: { en: "Sukanya Samriddhi Yojana", hi: "सुकन्या समृद्धि योजना", mr: "सुकन्या समृद्धि योजना" },
     description: "Small savings account for a girl child under 10 years, with tax-free interest.",
     benefits: "Higher fixed interest with tax benefits, maturing for education or marriage expenses.",
     documents: ["Girl child birth certificate", "Guardian Aadhaar and PAN", "Address proof"],
@@ -175,7 +175,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "atal-pension",
-    name: { en: "Atal Pension Yojana", hi: "", mr: "" },
+    name: { en: "Atal Pension Yojana", hi: "अटल पेंशन योजना", mr: "अटल पेंशन योजना" },
     description: "Guaranteed monthly pension after 60 for workers in the unorganised sector.",
     benefits: "Pension of ₹1,000 to ₹5,000 per month from age 60, based on contribution.",
     documents: ["Aadhaar card", "Bank account details", "Nominee details"],
@@ -195,7 +195,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "pm-svanidhi",
-    name: { en: "PM SVANidhi", hi: "", mr: "" },
+    name: { en: "PM SVANidhi", hi: "पीएम स्वनिधि", mr: "पीएम स्वनिधि" },
     description: "Collateral-free working capital loan for street vendors.",
     benefits: "Working capital loans starting at ₹10,000, with interest subsidy on timely repayment.",
     documents: ["Vending certificate or ULB survey reference", "Aadhaar card", "Bank passbook"],
@@ -209,7 +209,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "pm-kusum",
-    name: { en: "PM-KUSUM", hi: "", mr: "" },
+    name: { en: "PM-KUSUM", hi: "पीएम-कुसुम", mr: "पीएम-कुसुम" },
     description: "Subsidy for solar pumps and grid-connected solar plants on farm land.",
     benefits: "Central and state subsidy towards standalone solar pumps or solarisation of existing pumps.",
     documents: ["Land record", "Aadhaar card", "Bank passbook", "Electricity connection details"],
@@ -224,7 +224,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "stand-up-india",
-    name: { en: "Stand-Up India", hi: "", mr: "" },
+    name: { en: "Stand-Up India", hi: "स्टैंड-अप इंडिया", mr: "स्टँड-अप इंडिया" },
     description: "Bank loans from ₹10 lakh to ₹1 crore for SC, ST and women entrepreneurs.",
     benefits: "Composite term loan and working capital for a new enterprise, with handholding support.",
     documents: ["Aadhaar and PAN", "Caste certificate (if applicable)", "Business plan", "Bank details"],
@@ -239,7 +239,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "post-matric-scholarship",
-    name: { en: "Post-Matric Scholarship", hi: "", mr: "" },
+    name: { en: "Post-Matric Scholarship", hi: "पोस्ट-मैट्रिक छात्रवृत्ति", mr: "पोस्ट-मॅट्रिक शिष्यवृत्ती" },
     description: "Scholarship for SC, ST, OBC and minority students studying after class 10.",
     benefits: "Maintenance allowance and reimbursement of non-refundable fees.",
     documents: ["Caste certificate", "Income certificate", "Marksheet", "Bank passbook", "Aadhaar card"],
@@ -260,7 +260,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "nfbs",
-    name: { en: "National Family Benefit Scheme", hi: "", mr: "" },
+    name: { en: "National Family Benefit Scheme", hi: "राष्ट्रीय पारिवारिक लाभ योजना", mr: "राष्ट्रीय कुटुंब लाभ योजना" },
     description:
       "One-time assistance to a BPL household after the death of the primary earning member.",
     benefits: "Lump-sum assistance of ₹20,000 to the surviving head of the household.",
@@ -276,7 +276,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "ignoaps",
-    name: { en: "Indira Gandhi National Old Age Pension", hi: "", mr: "" },
+    name: { en: "Indira Gandhi National Old Age Pension", hi: "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन", mr: "इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन" },
     description: "Monthly pension for people aged 60 and above from BPL households.",
     benefits: "Monthly central pension, often topped up by the state government.",
     documents: ["Age proof", "BPL / ration card", "Bank passbook", "Aadhaar card"],
@@ -291,7 +291,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "pmsby",
-    name: { en: "Pradhan Mantri Suraksha Bima Yojana", hi: "", mr: "" },
+    name: { en: "Pradhan Mantri Suraksha Bima Yojana", hi: "प्रधानमंत्री सुरक्षा बीमा योजना", mr: "प्रधानमंत्री सुरक्षा विमा योजना" },
     description: "Accident insurance cover of ₹2 lakh for a small yearly premium.",
     benefits: "₹2 lakh accidental death or full disability cover for ₹20 per year.",
     documents: ["Aadhaar card", "Bank account details", "Nominee details"],
@@ -306,7 +306,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "pmjjby",
-    name: { en: "Pradhan Mantri Jeevan Jyoti Bima Yojana", hi: "", mr: "" },
+    name: { en: "Pradhan Mantri Jeevan Jyoti Bima Yojana", hi: "प्रधानमंत्री जीवन ज्योति बीमा योजना", mr: "प्रधानमंत्री जीवन ज्योति विमा योजना" },
     description: "Life insurance cover of ₹2 lakh renewable every year.",
     benefits: "₹2 lakh life cover for ₹436 per year, debited from the bank account.",
     documents: ["Aadhaar card", "Bank account details", "Nominee details"],
@@ -321,7 +321,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "mgnrega",
-    name: { en: "Mahatma Gandhi NREGA", hi: "", mr: "" },
+    name: { en: "Mahatma Gandhi NREGA", hi: "महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार गारंटी योजना", mr: "महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना" },
     description: "Guaranteed 100 days of wage employment a year for rural households.",
     benefits: "Wage work close to home, paid directly into the worker's bank account.",
     documents: ["Job card (or application for one)", "Aadhaar card", "Bank passbook", "Address proof"],
@@ -340,7 +340,7 @@ export const SCHEMES: Scheme[] = [
   },
   {
     scheme_id: "ayushman-bharat",
-    name: { en: "Ayushman Bharat PM-JAY", hi: "", mr: "" },
+    name: { en: "Ayushman Bharat PM-JAY", hi: "आयुष्मान भारत पीएम-जय", mr: "आयुष्मान भारत पीएम-जय" },
     description: "Health cover of ₹5 lakh per family per year for secondary and tertiary care.",
     benefits: "Cashless hospital treatment up to ₹5 lakh a year at empanelled hospitals.",
     documents: ["Aadhaar card", "Ration card", "Mobile number"],
