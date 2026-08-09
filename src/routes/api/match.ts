@@ -11,7 +11,7 @@ const schema = z.object({
   land_status: z.string().min(1).max(40),
   bank_account: z.string().min(1).max(20),
   ration_card: z.string().min(1).max(20),
-  assisted: z.boolean().optional(),
+  assisted: z.boolean().default(false),
 });
 
 export const Route = createFileRoute("/api/match")({

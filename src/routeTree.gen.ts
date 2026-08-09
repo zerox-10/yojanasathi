@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiHealthRouteImport } from './routes/api/health'
+import { Route as ApiMatchRouteImport } from './routes/api/match'
+import { Route as ApiMetadataRouteImport } from './routes/api/metadata'
+import { Route as ApiSchemesSchemeIdRouteImport } from './routes/api/schemes.$schemeId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiHealthRoute = ApiHealthRouteImport.update({
+  id: '/api/health',
+  path: '/api/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMatchRoute = ApiMatchRouteImport.update({
+  id: '/api/match',
+  path: '/api/match',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMetadataRoute = ApiMetadataRouteImport.update({
+  id: '/api/metadata',
+  path: '/api/metadata',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSchemesSchemeIdRoute = ApiSchemesSchemeIdRouteImport.update({
+  id: '/api/schemes/$schemeId',
+  path: '/api/schemes/$schemeId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/health': typeof ApiHealthRoute
+  '/api/match': typeof ApiMatchRoute
+  '/api/metadata': typeof ApiMetadataRoute
+  '/api/schemes/$schemeId': typeof ApiSchemesSchemeIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/health': typeof ApiHealthRoute
+  '/api/match': typeof ApiMatchRoute
+  '/api/metadata': typeof ApiMetadataRoute
+  '/api/schemes/$schemeId': typeof ApiSchemesSchemeIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/health': typeof ApiHealthRoute
+  '/api/match': typeof ApiMatchRoute
+  '/api/metadata': typeof ApiMetadataRoute
+  '/api/schemes/$schemeId': typeof ApiSchemesSchemeIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/api/health'
+    | '/api/match'
+    | '/api/metadata'
+    | '/api/schemes/$schemeId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/api/health'
+    | '/api/match'
+    | '/api/metadata'
+    | '/api/schemes/$schemeId'
+  id:
+    | '__root__'
+    | '/'
+    | '/api/health'
+    | '/api/match'
+    | '/api/metadata'
+    | '/api/schemes/$schemeId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiHealthRoute: typeof ApiHealthRoute
+  ApiMatchRoute: typeof ApiMatchRoute
+  ApiMetadataRoute: typeof ApiMetadataRoute
+  ApiSchemesSchemeIdRoute: typeof ApiSchemesSchemeIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +104,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/health': {
+      id: '/api/health'
+      path: '/api/health'
+      fullPath: '/api/health'
+      preLoaderRoute: typeof ApiHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/match': {
+      id: '/api/match'
+      path: '/api/match'
+      fullPath: '/api/match'
+      preLoaderRoute: typeof ApiMatchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/metadata': {
+      id: '/api/metadata'
+      path: '/api/metadata'
+      fullPath: '/api/metadata'
+      preLoaderRoute: typeof ApiMetadataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/schemes/$schemeId': {
+      id: '/api/schemes/$schemeId'
+      path: '/api/schemes/$schemeId'
+      fullPath: '/api/schemes/$schemeId'
+      preLoaderRoute: typeof ApiSchemesSchemeIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiHealthRoute: ApiHealthRoute,
+  ApiMatchRoute: ApiMatchRoute,
+  ApiMetadataRoute: ApiMetadataRoute,
+  ApiSchemesSchemeIdRoute: ApiSchemesSchemeIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

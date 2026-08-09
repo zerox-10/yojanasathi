@@ -9,7 +9,7 @@ export type Profile = {
   land_status: string;
   bank_account: string;
   ration_card: string;
-  assisted?: boolean;
+  assisted: boolean;
 };
 
 export type MatchResult = {
