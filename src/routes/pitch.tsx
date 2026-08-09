@@ -165,6 +165,19 @@ function PitchPage() {
           </Button>
         </div>
       </main>
+
+      <div className="hidden print:block">
+        {SLIDES.map((s, i) => (
+          <section
+            key={i}
+            className="pitch-slide flex min-h-screen flex-col justify-center px-12 py-16"
+          >
+            <p className="label-mono text-primary">{s.kicker}</p>
+            <h1 className="mt-4 text-4xl font-semibold leading-[1.05]">{s.title}</h1>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-ink">{s.body}</p>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }
