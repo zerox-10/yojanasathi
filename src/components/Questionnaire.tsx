@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { Switch } from "@/components/ui/switch";
+import { AssistedChecklist } from "@/components/AssistedChecklist";
 import { METADATA } from "@/lib/schemes";
 import type { Profile } from "@/lib/matching";
 
@@ -232,6 +233,8 @@ export function Questionnaire({
               <p className="mt-1 text-sm text-muted-ink">For a citizen, client or family member</p>
             </div>
           </div>
+
+          {assisted && <AssistedChecklist />}
 
           <div className="mt-8">
             <h1 className="text-2xl font-semibold sm:text-3xl" data-testid="questionnaire-question">
