@@ -1,5 +1,6 @@
 import { ArrowRight, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProblemSolution } from "@/components/ProblemSolution";
 
 const STEPS = [
   { n: "01", title: "Profile", text: "Tell us a little about the person" },
@@ -85,6 +86,8 @@ export function Landing({ onStart }: { onStart: (assisted?: boolean) => void }) 
         Yojana Sathi shows possible matches only. The official portal for each scheme makes the final
         decision — always check the official portal before applying.
       </p>
+
+      <ProblemSolution onStart={onStart} />
     </main>
   );
 }
