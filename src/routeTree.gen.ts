@@ -10,6 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as PitchRouteImport } from './routes/pitch'
+import { Route as SchemesRouteImport } from './routes/schemes'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ApiMatchRouteImport } from './routes/api/match'
 import { Route as ApiMetadataRouteImport } from './routes/api/metadata'
@@ -18,6 +21,21 @@ import { Route as ApiSchemesSchemeIdRouteImport } from './routes/api/schemes.$sc
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PitchRoute = PitchRouteImport.update({
+  id: '/pitch',
+  path: '/pitch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchemesRoute = SchemesRouteImport.update({
+  id: '/schemes',
+  path: '/schemes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiHealthRoute = ApiHealthRouteImport.update({
@@ -43,6 +61,9 @@ const ApiSchemesSchemeIdRoute = ApiSchemesSchemeIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/impact': typeof ImpactRoute
+  '/pitch': typeof PitchRoute
+  '/schemes': typeof SchemesRoute
   '/api/health': typeof ApiHealthRoute
   '/api/match': typeof ApiMatchRoute
   '/api/metadata': typeof ApiMetadataRoute
@@ -50,6 +71,9 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/impact': typeof ImpactRoute
+  '/pitch': typeof PitchRoute
+  '/schemes': typeof SchemesRoute
   '/api/health': typeof ApiHealthRoute
   '/api/match': typeof ApiMatchRoute
   '/api/metadata': typeof ApiMetadataRoute
@@ -58,6 +82,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/impact': typeof ImpactRoute
+  '/pitch': typeof PitchRoute
+  '/schemes': typeof SchemesRoute
   '/api/health': typeof ApiHealthRoute
   '/api/match': typeof ApiMatchRoute
   '/api/metadata': typeof ApiMetadataRoute
@@ -67,6 +94,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/impact'
+    | '/pitch'
+    | '/schemes'
     | '/api/health'
     | '/api/match'
     | '/api/metadata'
@@ -74,6 +104,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/impact'
+    | '/pitch'
+    | '/schemes'
     | '/api/health'
     | '/api/match'
     | '/api/metadata'
@@ -81,6 +114,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/impact'
+    | '/pitch'
+    | '/schemes'
     | '/api/health'
     | '/api/match'
     | '/api/metadata'
@@ -89,6 +125,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ImpactRoute: typeof ImpactRoute
+  PitchRoute: typeof PitchRoute
+  SchemesRoute: typeof SchemesRoute
   ApiHealthRoute: typeof ApiHealthRoute
   ApiMatchRoute: typeof ApiMatchRoute
   ApiMetadataRoute: typeof ApiMetadataRoute
@@ -102,6 +141,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pitch': {
+      id: '/pitch'
+      path: '/pitch'
+      fullPath: '/pitch'
+      preLoaderRoute: typeof PitchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schemes': {
+      id: '/schemes'
+      path: '/schemes'
+      fullPath: '/schemes'
+      preLoaderRoute: typeof SchemesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/health': {
@@ -137,6 +197,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ImpactRoute: ImpactRoute,
+  PitchRoute: PitchRoute,
+  SchemesRoute: SchemesRoute,
   ApiHealthRoute: ApiHealthRoute,
   ApiMatchRoute: ApiMatchRoute,
   ApiMetadataRoute: ApiMetadataRoute,
@@ -145,13 +208,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

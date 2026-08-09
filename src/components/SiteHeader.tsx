@@ -1,27 +1,55 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
-export function SiteHeader({ onStart }: { onStart: (assisted?: boolean) => void }) {
+export function SiteHeader({ onStart }: { onStart?: (assisted?: boolean) => void }) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="no-print sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur">
       <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4">
-        <a href="/" className="label-mono min-w-0 truncate font-medium" data-testid="header-logo">
+        <Link to="/" className="label-mono min-w-0 truncate font-medium" data-testid="header-logo">
           Yojana&nbsp;Sathi
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
-          <a href="#how-it-works" className="text-sm text-muted-ink hover:text-ink" data-testid="header-how-it-works-link">
-            How it works
-          </a>
-          <a href="#for-helpers" className="text-sm text-muted-ink hover:text-ink" data-testid="header-helpers-link">
-            For helpers
-          </a>
-          <Button size="sm" onClick={() => onStart(false)} data-testid="header-start-button">
-            Start checking
-          </Button>
+          <Link
+            to="/"
+            className="text-sm text-muted-ink hover:text-ink"
+            data-testid="header-home-link"
+            activeProps={{ className: "font-medium text-ink" }}
+            activeOptions={{ exact: true }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/impact"
+            className="text-sm text-muted-ink hover:text-ink"
+            data-testid="header-impact-link"
+            activeProps={{ className: "font-medium text-ink" }}
+          >
+            Impact
+          </Link>
+          <Link
+            to="/schemes"
+            className="text-sm text-muted-ink hover:text-ink"
+            data-testid="header-schemes-link"
+            activeProps={{ className: "font-medium text-ink" }}
+          >
+            Schemes
+          </Link>
+          {onStart ? (
+            <Button size="sm" onClick={() => onStart(false)} data-testid="header-start-button">
+              Start checking
+            </Button>
+          ) : (
+            <Button asChild size="sm" data-testid="header-start-button">
+              <Link to="/">Start checking</Link>
+            </Button>
+          )}
+          <LanguageToggle />
         </nav>
 
         <button
@@ -37,34 +65,56 @@ export function SiteHeader({ onStart }: { onStart: (assisted?: boolean) => void 
       </div>
 
       {open && (
-        <div className="border-t border-line bg-surface px-5 py-4 md:hidden" data-testid="mobile-menu-panel">
+        <div
+          className="border-t border-line bg-surface px-5 py-4 md:hidden"
+          data-testid="mobile-menu-panel"
+        >
           <nav className="flex flex-col gap-1">
-            <a
-              href="#how-it-works"
+            <Link
+              to="/"
               onClick={() => setOpen(false)}
               className="flex min-h-11 items-center text-sm"
-              data-testid="mobile-how-it-works-link"
+              data-testid="mobile-home-link"
             >
-              How it works
-            </a>
-            <a
-              href="#for-helpers"
+              Home
+            </Link>
+            <Link
+              to="/impact"
               onClick={() => setOpen(false)}
               className="flex min-h-11 items-center text-sm"
-              data-testid="mobile-helpers-link"
+              data-testid="mobile-impact-link"
             >
-              For helpers
-            </a>
-            <Button
-              className="mt-2 min-h-11"
-              onClick={() => {
-                setOpen(false);
-                onStart(false);
-              }}
-              data-testid="mobile-start-button"
+              Impact
+            </Link>
+            <Link
+              to="/schemes"
+              onClick={() => setOpen(false)}
+              className="flex min-h-11 items-center text-sm"
+              data-testid="mobile-schemes-link"
             >
-              Start checking
-            </Button>
+              Schemes
+            </Link>
+            {onStart ? (
+              <Button
+                className="mt-2 min-h-11"
+                onClick={() => {
+                  setOpen(false);
+                  onStart(false);
+                }}
+                data-testid="mobile-start-button"
+              >
+                Start checking
+              </Button>
+            ) : (
+              <Button asChild className="mt-2 min-h-11" data-testid="mobile-start-button">
+                <Link to="/" onClick={() => setOpen(false)}>
+                  Start checking
+                </Link>
+              </Button>
+            )}
+            <div className="mt-4">
+              <LanguageToggle mobile />
+            </div>
           </nav>
         </div>
       )}

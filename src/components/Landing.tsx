@@ -1,5 +1,6 @@
 import { ArrowRight, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProblemSolution } from "@/components/ProblemSolution";
 
 const STEPS = [
   { n: "01", title: "Profile", text: "Tell us a little about the person" },
@@ -19,11 +20,16 @@ export function Landing({ onStart }: { onStart: (assisted?: boolean) => void }) 
             Know your next step.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-ink">
-            Answer a few simple questions and discover government schemes you may qualify for — in under
-            30 seconds.
+            Answer a few simple questions and discover government schemes you may qualify for — in
+            under 30 seconds.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button size="lg" className="min-h-12" onClick={() => onStart(false)} data-testid="landing-start-button">
+            <Button
+              size="lg"
+              className="min-h-12"
+              onClick={() => onStart(false)}
+              data-testid="landing-start-button"
+            >
               Start checking
               <ArrowRight className="size-4" />
             </Button>
@@ -43,7 +49,10 @@ export function Landing({ onStart }: { onStart: (assisted?: boolean) => void }) 
           <p className="label-mono text-muted-ink">How it works</p>
           <ol className="mt-6 space-y-6">
             {STEPS.map((s) => (
-              <li key={s.n} className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 border-b border-line pb-5 last:border-0 last:pb-0">
+              <li
+                key={s.n}
+                className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 border-b border-line pb-5 last:border-0 last:pb-0"
+              >
                 <span className="label-mono text-primary">{s.n}</span>
                 <div className="min-w-0">
                   <h2 className="text-base font-semibold">{s.title}</h2>
@@ -66,8 +75,8 @@ export function Landing({ onStart }: { onStart: (assisted?: boolean) => void }) 
           </p>
           <h2 className="mt-4 text-2xl font-semibold">Filling this in for someone else?</h2>
           <p className="mt-2 max-w-2xl text-sm text-muted-ink">
-            Switch on assisted mode and the questions are worded for a citizen, client or family member.
-            Nothing is stored — copy or print the shortlist at the end.
+            Switch on assisted mode and the questions are worded for a citizen, client or family
+            member. Nothing is stored — copy or print the shortlist at the end.
           </p>
         </div>
         <Button
@@ -82,9 +91,11 @@ export function Landing({ onStart }: { onStart: (assisted?: boolean) => void }) 
       </section>
 
       <p className="mt-10 text-sm text-muted-ink">
-        Yojana Sathi shows possible matches only. The official portal for each scheme makes the final
-        decision — always check the official portal before applying.
+        Yojana Sathi shows possible matches only. The official portal for each scheme makes the
+        final decision — always check the official portal before applying.
       </p>
+
+      <ProblemSolution onStart={onStart} />
     </main>
   );
 }

@@ -1,11 +1,13 @@
 # Yojana Sathi — hackathon-ready feature plan
 
 ## Goal
+
 Strengthen the app for a hackathon pitch by adding civic-utility features that show the real-world problem, the solution, and measurable social impact — while keeping the existing lightweight, privacy-first, stateless architecture.
 
 ## What we will build
 
 ### 1. Landing-page problem/solution story
+
 Add two new sections to the existing home page (`src/routes/index.tsx`) below the current hero and helper card:
 
 - **The gap** — why citizens miss out: information is scattered across portals, eligibility language is confusing, and last-mile helpers (CSC operators, NGO staff, Anganwadi workers) have no quick screening tool.
@@ -14,6 +16,7 @@ Add two new sections to the existing home page (`src/routes/index.tsx`) below th
 Each section will reuse the warm Swiss civic-utility palette and include clear `data-testid` attributes on CTAs.
 
 ### 2. `/impact` route — deeper social-impact page
+
 Create a new route at `/impact` (or `/about`) with:
 
 - Problem statement + target users (citizens, field helpers, local governments).
@@ -23,6 +26,7 @@ Create a new route at `/impact` (or `/about`) with:
 - A printable one-pager button that produces a clean, letter/A4 PDF-friendly view.
 
 ### 3. `/pitch` route — judge-ready pitch deck
+
 Create a full-page, print-friendly pitch route (`/pitch`) designed like a slide deck:
 
 - Slides/sections: Hook, Problem, Solution, Demo CTA, Impact, Tech highlights, Roadmap, Team/Call to action.
@@ -31,6 +35,7 @@ Create a full-page, print-friendly pitch route (`/pitch`) designed like a slide 
 - Optional keyboard navigation (arrow keys / space) between sections.
 
 ### 4. Scheme browser (`/schemes`)
+
 Add a public route that lists all 17 schemes without requiring a questionnaire:
 
 - Search/filter by category, occupation, income, and state.
@@ -38,18 +43,21 @@ Add a public route that lists all 17 schemes without requiring a questionnaire:
 - Helps judges and visitors verify coverage instantly.
 
 ### 5. Assisted-mode helper checklist
+
 Enhance the existing assisted questionnaire flow with a non-intrusive helper checklist:
 
 - A collapsible panel reminding the field worker what documents to confirm before finishing.
 - Adds practical value for the stated target audience.
 
 ### 6. Shareable results card
+
 Improve the results screen so a matched shortlist can be shared as a clean text/card:
 
 - One-click copy already exists; add a "Share as image/text" preview and a WhatsApp-friendly formatted message.
 - Keep it stateless: no server-side image generation, only formatted text/URL.
 
 ### 7. Language toggle (English / Hindi / Marathi)
+
 Because scheme names already include `hi` and `mr` fields, add a UI language toggle:
 
 - Start with scheme names and a few key UI labels; expand iteratively.
