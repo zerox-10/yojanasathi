@@ -82,6 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Yojana Sathi" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { title: "Yojana Sathi" },
+      { property: "og:title", content: "Yojana Sathi" },
+      { name: "twitter:title", content: "Yojana Sathi" },
+      { name: "description", content: "Yojana Sathi helps Indian citizens discover government schemes they may qualify for." },
+      { property: "og:description", content: "Yojana Sathi helps Indian citizens discover government schemes they may qualify for." },
+      { name: "twitter:description", content: "Yojana Sathi helps Indian citizens discover government schemes they may qualify for." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/167f24b79791f40ba6186342e8df4e9e/id-preview-9d50ef63--2dc415d3-6cd3-487e-8583-fe99b3c62ef5.lovable.app-1786272374527.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/167f24b79791f40ba6186342e8df4e9e/id-preview-9d50ef63--2dc415d3-6cd3-487e-8583-fe99b3c62ef5.lovable.app-1786272374527.png" },
     ],
     links: [
       {
