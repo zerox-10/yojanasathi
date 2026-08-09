@@ -88,7 +88,11 @@ export function Results({
               <Copy className="size-4" /> Copy summary
             </Button>
             <ShareDialog summary={summary} />
-            <Button variant="outline" onClick={() => window.print()} data-testid="results-print-button">
+            <Button
+              variant="outline"
+              onClick={() => window.print()}
+              data-testid="results-print-button"
+            >
               <Printer className="size-4" /> Print
             </Button>
           </>
@@ -104,7 +108,9 @@ export function Results({
       {data.strong_matches.length > 0 && (
         <section className="mt-12" data-testid="strong-matches-section">
           <h2 className="text-xl font-semibold">Strong matches</h2>
-          <p className="mt-1 text-sm text-muted-ink">These schemes line up closely with the answers.</p>
+          <p className="mt-1 text-sm text-muted-ink">
+            These schemes line up closely with the answers.
+          </p>
           <div className="mt-5 space-y-4">
             {data.strong_matches.map((m) => (
               <SchemeCard key={m.scheme_id} match={m} index={++counter} />

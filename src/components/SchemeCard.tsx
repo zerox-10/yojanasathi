@@ -56,7 +56,10 @@ export function SchemeCard({ match, index }: { match: MatchResult; index: number
       </div>
 
       {open && (
-        <div className="mt-4 border-t border-line pt-4" data-testid={`scheme-details-panel-${index}`}>
+        <div
+          className="mt-4 border-t border-line pt-4"
+          data-testid={`scheme-details-panel-${index}`}
+        >
           <p className="label-mono text-muted-ink">Benefit</p>
           <p className="mt-2 text-sm">{match.benefits}</p>
 

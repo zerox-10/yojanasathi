@@ -204,7 +204,10 @@ export function Questionnaire({
 
         <section>
           <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-            <p className="label-mono min-w-0 text-muted-ink" data-testid="questionnaire-step-indicator">
+            <p
+              className="label-mono min-w-0 text-muted-ink"
+              data-testid="questionnaire-step-indicator"
+            >
               Step {step + 1} of {STEPS.length}
             </p>
             <Button
@@ -291,7 +294,11 @@ export function Questionnaire({
               </div>
             )}
 
-            <p aria-live="polite" className="mt-4 min-h-5 text-sm text-primary" data-testid="questionnaire-error">
+            <p
+              aria-live="polite"
+              className="mt-4 min-h-5 text-sm text-primary"
+              data-testid="questionnaire-error"
+            >
               {error}
             </p>
 

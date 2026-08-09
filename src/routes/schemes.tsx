@@ -8,7 +8,8 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { getSchemeName } from "@/lib/i18n";
 
 const title = "Browse schemes — Yojana Sathi";
-const description = "Explore the 17 government schemes currently covered by Yojana Sathi, with official links and eligibility hints.";
+const description =
+  "Explore the 17 government schemes currently covered by Yojana Sathi, with official links and eligibility hints.";
 
 export const Route = createFileRoute("/schemes")({
   head: () => ({
@@ -42,9 +43,13 @@ function SchemesPage() {
         scheme.description.toLowerCase().includes(q) ||
         scheme.benefits.toLowerCase().includes(q);
       const matchesOccupation =
-        occupation === "All" || !scheme.rules.occupation || scheme.rules.occupation.includes(occupation);
-      const matchesIncome = income === "All" || !scheme.rules.income || scheme.rules.income.includes(income);
-      const matchesState = state === "All" || !scheme.rules.states || scheme.rules.states.includes(state);
+        occupation === "All" ||
+        !scheme.rules.occupation ||
+        scheme.rules.occupation.includes(occupation);
+      const matchesIncome =
+        income === "All" || !scheme.rules.income || scheme.rules.income.includes(income);
+      const matchesState =
+        state === "All" || !scheme.rules.states || scheme.rules.states.includes(state);
       return matchesQuery && matchesOccupation && matchesIncome && matchesState;
     });
   }, [query, occupation, income, state, lang]);
@@ -55,7 +60,9 @@ function SchemesPage() {
 
       <main className="mx-auto max-w-6xl px-5 py-10">
         <p className="label-mono text-muted-ink">Browse</p>
-        <h1 className="mt-5 text-3xl font-semibold leading-[1.1] sm:text-4xl">Government schemes covered</h1>
+        <h1 className="mt-5 text-3xl font-semibold leading-[1.1] sm:text-4xl">
+          Government schemes covered
+        </h1>
         <p className="mt-3 max-w-2xl text-muted-ink">
           Explore the schemes currently in Yojana Sathi. Filters are a rough guide — always confirm
           eligibility on the official portal.
@@ -63,7 +70,10 @@ function SchemesPage() {
 
         <div className="mt-8 grid gap-4 rounded-lg border border-line bg-surface p-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <Search className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-ink" aria-hidden="true" />
+            <Search
+              className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-ink"
+              aria-hidden="true"
+            />
             <Input
               placeholder="Search schemes"
               value={query}
@@ -127,7 +137,8 @@ function SchemesPage() {
 
         {filtered.length === 0 && (
           <p className="mt-10 text-center text-muted-ink" data-testid="schemes-empty-state">
-            No schemes match those filters. Try clearing one filter or check the official welfare portal.
+            No schemes match those filters. Try clearing one filter or check the official welfare
+            portal.
           </p>
         )}
       </main>

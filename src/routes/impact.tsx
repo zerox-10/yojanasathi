@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/SiteHeader";
 
 const title = "Impact — Yojana Sathi";
-const description = "How Yojana Sathi helps citizens and field helpers discover government schemes faster, without storing personal data.";
+const description =
+  "How Yojana Sathi helps citizens and field helpers discover government schemes faster, without storing personal data.";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -58,9 +59,9 @@ function ImpactPage() {
           <p className="label-mono text-primary">Trust and sources</p>
           <h2 className="mt-4 text-2xl font-semibold">Built from official information</h2>
           <p className="mt-3 text-muted-ink">
-            Every scheme links to its official portal and carries a last-verified date. Yojana Sathi is
-            an information aid, not an approval authority. Final eligibility always rests with the
-            official scheme portal.
+            Every scheme links to its official portal and carries a last-verified date. Yojana Sathi
+            is an information aid, not an approval authority. Final eligibility always rests with
+            the official scheme portal.
           </p>
           <div className="mt-6 flex items-start gap-2 text-sm text-success-green">
             <ShieldCheck className="mt-0.5 size-4 shrink-0" />

@@ -34,7 +34,11 @@ export function AssistedChecklist() {
           <ClipboardCheck className="size-4 text-primary" aria-hidden="true" />
           Helper checklist
         </span>
-        {open ? <ChevronUp className="size-4 text-muted-ink" /> : <ChevronDown className="size-4 text-muted-ink" />}
+        {open ? (
+          <ChevronUp className="size-4 text-muted-ink" />
+        ) : (
+          <ChevronDown className="size-4 text-muted-ink" />
+        )}
       </button>
 
       {open && (

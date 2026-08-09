@@ -65,7 +65,10 @@ export function SiteHeader({ onStart }: { onStart?: (assisted?: boolean) => void
       </div>
 
       {open && (
-        <div className="border-t border-line bg-surface px-5 py-4 md:hidden" data-testid="mobile-menu-panel">
+        <div
+          className="border-t border-line bg-surface px-5 py-4 md:hidden"
+          data-testid="mobile-menu-panel"
+        >
           <nav className="flex flex-col gap-1">
             <Link
               to="/"

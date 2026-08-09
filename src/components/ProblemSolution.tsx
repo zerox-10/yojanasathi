@@ -20,9 +20,21 @@ const PROBLEM_CARDS = [
 ];
 
 const APPROACH_STEPS = [
-  { n: "01", title: "Answer 8 simple questions", text: "Age, state, work, income, land, bank account and ration card — no names or addresses required." },
-  { n: "02", title: "See strong and possible matches", text: "Deterministic rules sort schemes into strong matches and possible matches, with clear reasons." },
-  { n: "03", title: "Take the next step", text: "Every match links to the official portal, and the shortlist can be copied, printed or shared." },
+  {
+    n: "01",
+    title: "Answer 8 simple questions",
+    text: "Age, state, work, income, land, bank account and ration card — no names or addresses required.",
+  },
+  {
+    n: "02",
+    title: "See strong and possible matches",
+    text: "Deterministic rules sort schemes into strong matches and possible matches, with clear reasons.",
+  },
+  {
+    n: "03",
+    title: "Take the next step",
+    text: "Every match links to the official portal, and the shortlist can be copied, printed or shared.",
+  },
 ];
 
 export function ProblemSolution({ onStart }: { onStart: (assisted?: boolean) => void }) {
@@ -59,7 +71,12 @@ export function ProblemSolution({ onStart }: { onStart: (assisted?: boolean) => 
               few plain facts into a shortlist of schemes worth checking officially.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button size="lg" className="min-h-12" onClick={() => onStart(false)} data-testid="problem-start-button">
+              <Button
+                size="lg"
+                className="min-h-12"
+                onClick={() => onStart(false)}
+                data-testid="problem-start-button"
+              >
                 Start checking
                 <ArrowRight className="size-4" />
               </Button>

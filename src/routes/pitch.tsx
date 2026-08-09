@@ -4,7 +4,8 @@ import { ArrowLeft, ArrowRight, Printer, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const title = "Pitch — Yojana Sathi";
-const description = "Hackathon pitch deck for Yojana Sathi: a fast, explainable, privacy-first government scheme finder for India.";
+const description =
+  "Hackathon pitch deck for Yojana Sathi: a fast, explainable, privacy-first government scheme finder for India.";
 
 export const Route = createFileRoute("/pitch")({
   head: () => ({
@@ -92,7 +93,12 @@ function PitchPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <p className="label-mono text-muted-ink">Yojana Sathi — pitch deck</p>
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" onClick={() => window.print()} data-testid="pitch-print-button">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.print()}
+              data-testid="pitch-print-button"
+            >
               <Printer className="size-4" /> Print
             </Button>
             <Button asChild size="sm" data-testid="pitch-home-button">
@@ -116,7 +122,9 @@ function PitchPage() {
             <div className="flex flex-col items-center justify-center rounded-lg border border-line bg-surface p-8">
               <QrCode className="size-32 text-ink" aria-hidden="true" />
               <p className="mt-4 text-center text-sm text-muted-ink">Scan to open the live app</p>
-              <p className="mt-1 text-center text-xs text-muted-ink">Replace this with a real QR code before presenting.</p>
+              <p className="mt-1 text-center text-xs text-muted-ink">
+                Replace this with a real QR code before presenting.
+              </p>
             </div>
           ) : (
             <div className="rounded-lg border border-line bg-surface p-8">
